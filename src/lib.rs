@@ -1,3 +1,11 @@
+//! # Minigrep
+//! `Minigrep` is a command line application
+//! that takes two arguments from the command 
+//! line: one the keyword to search and the second
+//! the file path to search in. This is achieved 
+//! using `cargo run -- body poem.txt`
+
+/// Standard libraries used in this module
 use std::env;
 use std::error::Error;
 use std::fs;
@@ -41,6 +49,15 @@ Trust me.";
     );
 }
 
+/// `search_case_insensitive` searches the contents by firstly coverting the string to
+/// lowercase then it employs the use of iterator adapter and
+/// closures.
+/// # Case Insensitive Search
+/// ```
+/// let contents = String::from("Accurately documenting your packages will help other users know how and when to use them, so it’s worth investing the time to write documentation. In Chapter 3, we discussed how to comment Rust code using two slashes, //.") 
+/// contents.to_lowercase()
+/// contents.to_lowercase().filter(|line| line.contains(query)).collect()
+/// ```
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
     .lines()
