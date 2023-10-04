@@ -6,7 +6,7 @@
 - Rust
 
 ## Getting Started
-- clone `https://github.com/Okechukwu-muokwugwo/minigrep.git`
+- clone `https://github.com/apt2tell/minigrep.git`
 - cd `minigrep`
 - You can search for any word from `poem.txt` in root directory or created your file by typing `cargo run -- somebody poem.txt`
 
